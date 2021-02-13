@@ -2,7 +2,7 @@
 
 <!-- https://docs.flatpak.org/en/latest/freedesktop-quick-reference.html#appdata-files -->
 <component type="console-application">
-	<id>org.fluxcd.flux</id>
+	<id>io.fluxcd.flux</id>
 	<name>flux</name>
 	<summary>Open and extensible continuous delivery solution for Kubernetes. Powered by GitOps Toolkit</summary>
 	<metadata_license>CC0-1.0</metadata_license>
@@ -24,7 +24,7 @@
 	</description>
 	<releases>
 		<release version="0.8.0" date="2021-02-12">
-			<url>https://github.com/fluxcd/flux2/releases/tag/v0.9.7</url>
+			<url>https://github.com/fluxcd/flux2/releases/tag/v0.8.0</url>
 		</release>
 	</releases>
 </component>
