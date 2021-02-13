@@ -1,0 +1,29 @@
+#!BuildVersion: 0.8.0
+---
+app-id: org.fluxcd.flux
+runtime: org.freedesktop.Platform
+sdk: org.freedesktop.Sdk
+
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.golang
+
+runtime-version: '20.08'
+command: flux
+
+modules:
+  - name: flux
+    buildsystem: simple
+    build-options:
+      prefix: /usr/lib/sdk/golang
+      prepend-path: /usr/lib/sdk/golang/bin
+      build-args:
+        - --share=network
+    build-commands:
+      - "cd src/github.com/fluxcd/flux2;
+         go mod download -x;
+         go build -v"
+      - "install -Dm 755 src/github.com/fluxcd/flux2/flux ${FLATPAK_DEST}/bin/flux"
+    sources:
+      - type: git
+        url: https://github.com/fluxcd/flux2/
+        tag: v0.8.0
