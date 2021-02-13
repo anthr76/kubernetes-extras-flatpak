@@ -20,8 +20,14 @@ modules:
     build-commands:
       - "cd src/github.com/fluxcd/flux2;
          make build"
-      - "install -Dm 755 bin/flux ${FLATPAK_DEST}/bin/flux"
+      - "install -Dm 755 src/github.com/fluxcd/flux2/bin/flux ${FLATPAK_DEST}/bin/flux"
+      - "install -Dm 644 src/github.com/anthr76/kubernetes-extras-flatpak/io.fluxcd.flux/io.fluxcd.flux.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml"
     sources:
       - type: git
-        url: https://github.com/fluxcd/flux2/
+        url: "https://github.com/fluxcd/flux2/"
         tag: v0.8.0
+        dest: src/github.com/fluxcd/flux2
+      - type: git
+        url: "https://github.com/anthr76/kubernetes-extras-flatpak/"
+        tag: master
+        dest: src/github.com/anthr76/kubernetes-extras-flatpak
