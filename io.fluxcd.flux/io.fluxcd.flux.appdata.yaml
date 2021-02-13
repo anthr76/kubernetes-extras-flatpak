@@ -1,0 +1,10 @@
+---
+File: DEP-11
+Version: '0.8'
+Origin: flathub
+id: org.fluxcd.flux
+type: console-application
+package: flux
+name: flux
+releases:
+  - vesrion: '0.8.0'
